@@ -9,7 +9,7 @@ class TypeController extends Controller
 {
     public function index()
     {
-        $types = Type::all();
+        $types = Type::paginate(2);
         return view('types.list',compact('types'));
     }
 
@@ -46,4 +46,5 @@ class TypeController extends Controller
         $type->delete();
         return redirect()->route('types.list');
     }
+
 }

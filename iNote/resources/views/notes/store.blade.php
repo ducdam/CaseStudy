@@ -9,14 +9,14 @@
 @endif
 @extends('home')
 @section('title')
-    them note
+    THEM NOTE
 @endsection
 @section('content')
     <div>
-        <h2>them note</h2>
+        <h2>THEM NOTE</h2>
         <form method="post" action="{{route('notes.create')}}">
             @csrf
-            <table class="table" border="px">
+            <table class="table" border="10px">
                 <tr>
                     <td>title</td>
                     <td><input  class="form-control" name="title"></td>

@@ -1,11 +1,13 @@
 @extends('home')
 @section('title')
-    type
+TYPE
 @endsection
 @section('content')
     <div>
-        <h2>type</h2>
-        <table class="table" border="px"  >
+        {{ $types->links() }}
+
+        <h2>TYPE</h2>
+        <table class="table" border="10px"  >
             <tr>
                 <td scope="col">stt</td>
                 <td>name</td>

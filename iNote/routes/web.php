@@ -21,6 +21,7 @@ Route::group(['prefix'=>'types'],function (){
     Route::get('/edit/{id}','TypeController@edit')->name('types.edit');
     Route::post('/edit/{id}','TypeController@update')->name('types.update');
     Route::get('/destroy/{id}','TypeController@destroy')->name('types.destroy');
+
 });
 Route::group(['prefix'=>'notes'],function (){
     Route::get('/','NoteController@index')->name('notes.list');
@@ -29,4 +30,6 @@ Route::group(['prefix'=>'notes'],function (){
     Route::get('/edit/{id}','NoteController@edit')->name('notes.edit');
     Route::post('/edit/{id}','NoteController@update')->name('notes.update');
     Route::get('/destroy/{id}','NoteController@destroy')->name('notes.destroy');
+    Route::post('/search','NoteController@search')->name('notes.search');
+
 });

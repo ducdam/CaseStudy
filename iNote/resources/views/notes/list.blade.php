@@ -1,11 +1,14 @@
+
 @extends('home')
 @section('title')
-    note
+    NOTE
 @endsection
 @section('content')
     <div>
-        <h2>note</h2>
-        <table class="table" border="px">
+        {{ $notes->links() }}
+
+        <h2>NOTE</h2>
+        <table class="table" border="10px">
             <tr>
                 <td>stt</td>
                 <td>title</td>

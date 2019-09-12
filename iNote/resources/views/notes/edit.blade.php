@@ -9,14 +9,14 @@
 @endif
 @extends('home')
 @section('title')
-    them note
+    EDIT NOTE
 @endsection
 @section('content')
     <div>
-        <h2>sua note</h2>
+        <h2>EDIT NOTE</h2>
         <form method="post" action="{{route('notes.update',$note->id)}}">
             @csrf
-            <table class="table" border="px">
+            <table class="table" border="10px">
                 <tr>
                     <td>title</td>
                     <td><input class="form-control" name="title" value="{{$note->title}}"></td>

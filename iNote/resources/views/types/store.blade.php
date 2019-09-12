@@ -1,13 +1,13 @@
 @extends('home')
 @section('title')
-    them type
+    CREATE TYPE
 @endsection
 @section('content')
     <div>
-        <h2>them type</h2>
+        <h2>CREATE TYPE</h2>
         <form method="post" action="{{route('types.create')}}">
             @csrf
-            <table class="table" border="px">
+            <table class="table" border="10px">
                 <tr>
                     <td>title</td>
                     <td><input   class="form-control"  name="name"></td>

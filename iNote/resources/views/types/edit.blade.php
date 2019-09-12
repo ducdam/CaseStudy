@@ -7,7 +7,7 @@
         <h2>sua note</h2>
         <form method="post" action="{{route('types.update',$type->id)}}">
             @csrf
-            <table class="table" class="table" border="px">
+            <table class="table" class="table" border="10px">
                 <tr>
                     <td>name</td>
                     <td><input   class="form-control"  type="text" name="name" value="{{$type->name}}"></td>

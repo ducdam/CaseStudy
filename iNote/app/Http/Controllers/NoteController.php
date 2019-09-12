@@ -11,7 +11,7 @@ class NoteController extends Controller
 {
     public function index()
     {
-        $notes = Note::all();
+        $notes = Note::paginate(2);
         return view('notes.list', compact('notes'));
     }
 
@@ -53,5 +53,21 @@ class NoteController extends Controller
         $note = Note::findOrFail($id);
         $note->delete();
         return redirect()->route('notes.list');
+    }
+    public function search(Request $request)
+
+    {
+
+        $keyword = $request->input('keyword');
+
+        if (!$keyword) {
+
+            return redirect()->route('notes.list');
+
+        }
+
+        $notes = Note::where('title','like','%'.$keyword.'%')->paginate(5);
+        return view('notes.list', compact('notes'));
+
     }
 }
