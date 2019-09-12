@@ -7,13 +7,14 @@
         <h2>them type</h2>
         <form method="post" action="{{route('types.create')}}">
             @csrf
-            <table border="px">
+            <table class="table" border="px">
                 <tr>
                     <td>title</td>
-                    <td><input name="name"></td>
+                    <td><input   class="form-control"  name="name"></td>
                 </tr>
             </table>
-            <button type="submit">submit</button>
+            <button class="btn btn-secondary"  type="submit">submit</button>
+            <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
         </form>
     </div>
 @endsection

@@ -8,6 +8,6 @@ class Note extends Model
 {
     public function type()
     {
-        return $this->belongsTo('App/Type');
+        return $this->belongsTo('App\Type');
     }
 }

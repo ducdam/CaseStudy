@@ -8,6 +8,6 @@ class Type extends Model
 {
     public function note()
     {
-        return $this->hasMany('App/Note');
+        return $this->hasMany('App\Note');
     }
 }

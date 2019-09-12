@@ -4,23 +4,29 @@
 @endsection
 @section('content')
     <div>
-        <h2>Type</h2>
-        <table border="px">
+        <h2>type</h2>
+        <table class="table" border="px"  >
             <tr>
-                <td>stt</td>
+                <td scope="col">stt</td>
                 <td>name</td>
-                <td>xoa</td>
-                <td>sua</td>
+                <td>number note</td>
+                <td>action</td>
+
             </tr>
             @foreach($types as $key => $type )
                 <tr>
                     <td>{{++$key}}</td>
                     <td>{{$type->name}}</td>
-                    <td><a href="{{route('types.destroy',$type->id)}}">xoa</a></td>
-                    <td><a href="{{route('types.edit',$type->id)}}">sua</a></td>
+                    <td>{{ count($type->note) }}</td>
+
+                    <td><a  class="btn btn-primary"  href="{{route('types.destroy',$type->id)}}">xoa</a>
+                    <a  class="btn btn-primary"  href="{{route('types.edit',$type->id)}}">sua</a></td>
                 </tr>
                 @endforeach
         </table>
-        <a href="{{route('types.store')}}">them</a>
+        <div>
+            <a  class="btn btn-primary"  href="{{route('types.store')}}">them</a>
+        </div>
+
     </div>
 @endsection

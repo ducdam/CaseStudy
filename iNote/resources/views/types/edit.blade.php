@@ -7,13 +7,15 @@
         <h2>sua note</h2>
         <form method="post" action="{{route('types.update',$type->id)}}">
             @csrf
-            <table border="px">
+            <table class="table" class="table" border="px">
                 <tr>
                     <td>name</td>
-                    <td><input name="name" value="{{$type->name}}"></td>
+                    <td><input   class="form-control"  type="text" name="name" value="{{$type->name}}"></td>
                 </tr>
             </table>
-            <button type="submit">submit</button>
+            <button  class="btn btn-primary"  type="submit">submit</button>
+            <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
+
         </form>
     </div>
 @endsection

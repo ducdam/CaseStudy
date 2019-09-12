@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreNoteType;
 use App\Note;
+use App\Type;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -10,15 +12,16 @@ class NoteController extends Controller
     public function index()
     {
         $notes = Note::all();
-        return view('notes.list',compact('notes'));
+        return view('notes.list', compact('notes'));
     }
 
     public function store()
     {
-        return view('notes.store');
+        $types = Type::all();
+        return view('notes.store', compact('types'));
     }
 
-    public function create(Request$request)
+    public function create(StoreNoteType $request)
     {
         $note = new  Note();
         $note->title = $request->title;
@@ -31,10 +34,11 @@ class NoteController extends Controller
     public function edit($id)
     {
         $note = Note::find($id);
-        return view('notes.edit',compact('note'));
+        $types = Type::all();
+        return view('notes.edit', compact('note', 'types'));
     }
 
-    public function update(Request$request,$id)
+    public function update(StoreNoteType $request, $id)
     {
         $notes = Note::findOrFail($id);
         $notes->title = $request->title;
